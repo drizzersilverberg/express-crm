@@ -18,6 +18,10 @@ app.use(bodyParser.json());
 
 routes(app);
 
+// serving static files
+app.use(express.static('public'));
+// put an image in express-crm/public/images/example.jpg, then try access http://localhost:3000/images/example.jpg
+
 app.get('/', (req, res) =>
   res.send(`Node and express server is running on port ${PORT}`)
 );
